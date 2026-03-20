@@ -85,7 +85,9 @@
     background: var(--navy);
     padding: 0 6%;
     display: grid; grid-template-columns: 1fr 1fr;
-    min-height: 88vh; align-items: center;
+    height: calc(100svh - 64px);
+    min-height: 560px;
+    align-items: center;
     position: relative; overflow: hidden;
   }
   .hero::after {
@@ -100,7 +102,7 @@
 
   .hero-text {
     position: relative; z-index: 1;
-    padding: 80px 48px 80px 0;
+    padding: 0 48px 0 0;
     animation: fadeUp 0.6s ease both;
   }
 
@@ -143,30 +145,31 @@
   .btn-call:hover { border-color: rgba(232,160,32,0.4); background: rgba(232,160,32,0.06); }
 
   .hero-trust {
-    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
     margin-top: 36px; padding-top: 28px;
     border-top: 1px solid rgba(255,255,255,0.08);
   }
   .trust-item {
     display: flex; align-items: center; gap: 6px;
-    font-size: 0.8rem; font-weight: 500; color: rgba(255,255,255,0.45);
+    font-size: 0.8rem; font-weight: 500; color: #D0D4DA;
   }
   .trust-dot {
     width: 4px; height: 4px; border-radius: 50%;
-    background: var(--amber); opacity: 0.7; flex-shrink: 0;
+    background: #D0D4DA; opacity: 0.7; flex-shrink: 0;
   }
 
   /* Hero image */
   .hero-img-wrap {
     position: relative; z-index: 1;
-    padding: 60px 0 60px 40px;
+    padding: 40px 0 40px 40px;
     display: flex; align-items: center; justify-content: center;
+    height: 100%;
     animation: fadeUp 0.6s 0.15s ease both;
   }
-  .hero-img-card { width: 100%; max-width: 420px; position: relative; }
+  .hero-img-card { width: 100%; max-width: 380px; position: relative; }
   .hero-img-card img {
-    width: 100%; aspect-ratio: 4/5; object-fit: cover;
-    border-radius: 16px; display: block;
+    width: 100%; height: calc(100svh - 64px - 80px); max-height: 520px;
+    object-fit: cover; border-radius: 16px; display: block;
   }
 
 
@@ -452,8 +455,8 @@
 
   /* ── TABLET ── */
   @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-text { padding: 60px 0 44px; }
+    .hero { grid-template-columns: 1fr; height: calc(100svh - 64px); min-height: 500px; }
+    .hero-text { padding: 0; display: flex; flex-direction: column; justify-content: center; }
     .hero-img-wrap { display: none; }
     .why-grid, .about-grid { grid-template-columns: 1fr; gap: 36px; }
     .why-right { display: none; }
@@ -471,7 +474,7 @@
     .nav-links a:not(.nav-wa) { display: none; }
     .nav-wa { padding: 8px 14px !important; font-size: 0.82rem !important; }
 
-    .hero { padding: 0 5%; min-height: 100svh; }
+    .hero { padding: 0 5%; height: calc(100svh - 60px); min-height: 500px; }
     .hero-bg-mobile {
       display: block;
       position: absolute; inset: 0; z-index: 0;
@@ -490,7 +493,7 @@
         rgba(27,45,69,0.45) 100%
       );
     }
-    .hero-text { position: relative; z-index: 1; padding: 52px 0 48px; }
+    .hero-text { position: relative; z-index: 1; padding: 0; display: flex; flex-direction: column; justify-content: center; }
     .hero::after { display: none; }
 
     .hero h1 { font-size: 2rem; line-height: 1.12; }
@@ -602,12 +605,7 @@
   </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="tbar-item"><div class="tbar-check"><svg viewBox="0 0 8 8" fill="none"><path d="M1 4l2 2 4-4" stroke="#1B2D45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Licensed electricians</div>
-  <div class="tbar-item"><div class="tbar-check"><svg viewBox="0 0 8 8" fill="none"><path d="M1 4l2 2 4-4" stroke="#1B2D45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>24/7 emergency response</div>
-  <div class="tbar-item"><div class="tbar-check"><svg viewBox="0 0 8 8" fill="none"><path d="M1 4l2 2 4-4" stroke="#1B2D45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Woodstock, Cape Town</div>
-</div>
+
 
 <!-- SERVICES -->
 <section class="section services-section" id="services">
