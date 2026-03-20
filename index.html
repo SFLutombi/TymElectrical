@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tym Electrical | Licensed Electricians in Cape Town</title>
-<meta name="description" content="Fast, reliable electrical services in Cape Town. Installations, maintenance, emergency callouts. Call or WhatsApp Tym Electrical today.">
+<title>TSE Tym Solar and Electrical | Licensed Electricians in Cape Town</title>
+<meta name="description" content="Fast, reliable electrical services in Cape Town. Installations, maintenance, emergency callouts. Call or WhatsApp TSE Tym Solar and Electrical today.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -56,11 +56,12 @@
 
   .logo-mark { display: flex; align-items: center; gap: 10px; }
   .logo-wordmark {
-    font-size: 1.05rem; font-weight: 700;
+    font-size: 0.92rem; font-weight: 700;
     letter-spacing: -0.02em;
-    color: var(--navy);
+    color: var(--amber);
   }
-  .logo-wordmark span { color: var(--amber); }
+  .logo-wordmark .wm-tym { color: var(--amber); }
+
 
   .nav-links { display: flex; align-items: center; gap: 2px; }
   .nav-links a {
@@ -68,7 +69,7 @@
     padding: 7px 14px; border-radius: 8px;
     transition: color 0.15s, background 0.15s;
   }
-  .nav-links a:hover { color: var(--navy); background: var(--navy-tint); }
+  .nav-links a:hover { color: var(--amber); background: var(--navy-tint); }
 
   .nav-wa {
     display: flex; align-items: center; gap: 7px;
@@ -167,20 +168,7 @@
     width: 100%; aspect-ratio: 4/5; object-fit: cover;
     border-radius: 16px; display: block;
   }
-  .hero-callout {
-    position: absolute; bottom: -16px; left: -20px;
-    background: var(--white); border-radius: 12px;
-    padding: 12px 16px; box-shadow: var(--sh-md);
-    display: flex; align-items: center; gap: 10px;
-  }
-  .callout-icon {
-    width: 36px; height: 36px; border-radius: 8px;
-    background: var(--amber-pale);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1rem; flex-shrink: 0;
-  }
-  .callout-text strong { display: block; color: var(--navy); font-size: 0.82rem; font-weight: 700; }
-  .callout-text span { font-size: 0.72rem; color: var(--ink-soft); }
+
 
   /* ── TRUST BAR ── */
   .trust-bar {
@@ -191,7 +179,7 @@
   }
   .tbar-item {
     display: flex; align-items: center; gap: 7px;
-    font-size: 0.8rem; font-weight: 600; color: var(--navy);
+    font-size: 0.8rem; font-weight: 600; color: var(--amber);
     padding: 4px 28px;
     border-right: 1px solid rgba(27,45,69,0.15);
   }
@@ -216,7 +204,7 @@
   .sec-h {
     font-size: clamp(1.7rem, 3.5vw, 2.5rem);
     font-weight: 800; letter-spacing: -0.035em;
-    color: var(--navy); line-height: 1.1; margin-bottom: 14px;
+    color: var(--amber); line-height: 1.1; margin-bottom: 14px;
   }
   .sec-sub {
     font-size: 0.97rem; font-weight: 400;
@@ -226,26 +214,72 @@
   /* ── SERVICES ── */
   .services-section { background: var(--linen); }
   .services-head { margin-bottom: 48px; }
-  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 16px; }
 
+  /* Featured top card (large) */
+  .svc-featured {
+    display: grid; grid-template-columns: 1fr 1fr;
+    background: var(--white); border: 1px solid var(--rule);
+    border-radius: 16px; overflow: hidden;
+    margin-bottom: 16px;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .svc-featured:hover { box-shadow: var(--sh-md); border-color: rgba(232,160,32,0.3); }
+  .svc-featured-img {
+    position: relative; overflow: hidden; min-height: 280px;
+  }
+  .svc-featured-img img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.4s ease;
+  }
+  .svc-featured:hover .svc-featured-img img { transform: scale(1.03); }
+  .svc-featured-body {
+    padding: 36px 36px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .svc-featured-body .svc-num {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
+    color: var(--amber); margin-bottom: 12px; display: block;
+  }
+  .svc-featured-body h3 {
+    font-size: 1.3rem; font-weight: 800; letter-spacing: -0.025em;
+    color: var(--amber); margin-bottom: 10px; line-height: 1.2;
+  }
+  .svc-featured-body p { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.65; }
+
+  /* Grid of smaller cards */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
   .svc-card {
     background: var(--white); border: 1px solid var(--rule);
-    border-radius: 14px; padding: 28px 24px;
+    border-radius: 14px; overflow: hidden;
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    display: flex; flex-direction: column;
   }
   .svc-card:hover { transform: translateY(-3px); box-shadow: var(--sh-md); border-color: rgba(232,160,32,0.3); }
+  .svc-card-img {
+    position: relative; overflow: hidden; height: 160px;
+  }
+  .svc-card-img img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.4s ease;
+  }
+  .svc-card:hover .svc-card-img img { transform: scale(1.05); }
+  .svc-card-body { padding: 18px 18px 20px; flex: 1; }
   .svc-num {
     font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
-    color: var(--amber); margin-bottom: 14px; display: block;
+    color: var(--amber); margin-bottom: 8px; display: block;
   }
   .svc-card h3 {
-    font-size: 0.97rem; font-weight: 700; letter-spacing: -0.02em;
-    color: var(--navy); margin-bottom: 8px;
+    font-size: 0.92rem; font-weight: 700; letter-spacing: -0.02em;
+    color: var(--amber); margin-bottom: 6px;
   }
-  .svc-card p { font-size: 0.855rem; color: var(--ink-soft); line-height: 1.62; }
+  .svc-card p { font-size: 0.835rem; color: var(--ink-soft); line-height: 1.6; }
 
   .svc-cta {
-    margin-top: 36px; text-align: center;
+    margin-top: 24px; text-align: center;
     background: var(--white); border: 1px solid var(--rule);
     border-radius: 14px; padding: 28px;
   }
@@ -267,7 +301,7 @@
   }
   .why-point h4 {
     font-size: 0.9rem; font-weight: 700; letter-spacing: -0.01em;
-    color: var(--navy); margin-bottom: 4px;
+    color: var(--amber); margin-bottom: 4px;
   }
   .why-point p { font-size: 0.84rem; color: var(--ink-soft); line-height: 1.6; }
 
@@ -296,11 +330,11 @@
   .reviewer { display: flex; align-items: center; gap: 10px; }
   .reviewer-av {
     width: 34px; height: 34px; border-radius: 50%;
-    background: var(--navy-tint); color: var(--navy);
+    background: var(--navy-tint); color: var(--amber);
     display: flex; align-items: center; justify-content: center;
     font-size: 0.75rem; font-weight: 700;
   }
-  .reviewer-name { font-size: 0.82rem; font-weight: 700; color: var(--navy); }
+  .reviewer-name { font-size: 0.82rem; font-weight: 700; color: var(--amber); }
   .reviewer-loc { font-size: 0.72rem; color: var(--ink-soft); }
 
   /* ── QUOTE ── */
@@ -354,8 +388,13 @@
   .about-text p {
     font-size: 0.95rem; color: var(--ink-soft); line-height: 1.8; margin-bottom: 16px;
   }
-  .about-text p strong { color: var(--navy); font-weight: 600; }
+  .about-text p strong { color: var(--amber); font-weight: 600; }
   .about-text .btn-wa { margin-top: 10px; }
+
+  /* ── MAP ── */
+  .map-section { background: var(--white); }
+  .map-header { margin-bottom: 32px; }
+  .map-wrap { box-shadow: var(--sh-md); border-radius: 14px; overflow: hidden; }
 
   /* ── FOOTER ── */
   footer { background: #111E2E; padding: 52px 6% 28px; color: rgba(255,255,255,0.45); }
@@ -421,6 +460,9 @@
     .footer-grid { grid-template-columns: 1fr; gap: 28px; }
     .tbar-item { border-right: none; padding: 5px 14px; }
     .section { padding: 64px 6%; }
+    .svc-featured { grid-template-columns: 1fr; }
+    .svc-featured-img { min-height: 240px; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
   }
 
   /* ── MOBILE ── */
@@ -433,7 +475,7 @@
     .hero-bg-mobile {
       display: block;
       position: absolute; inset: 0; z-index: 0;
-      background-color: var(--navy);
+      background-color: var(--amber);
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
@@ -463,8 +505,11 @@
     .section { padding: 52px 5%; }
     .sec-h { font-size: 1.7rem; }
     .services-head { margin-bottom: 28px; }
-    .services-grid { grid-template-columns: 1fr; gap: 12px; }
-    .svc-card { padding: 22px 18px; }
+    .svc-featured { grid-template-columns: 1fr; }
+    .svc-featured-img { min-height: 220px; }
+    .svc-featured-body { padding: 24px 20px; }
+    .services-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .svc-card-img { height: 130px; }
     .svc-cta { padding: 22px 18px; }
     .svc-cta .btn-wa, .about-text .btn-wa { width: 100%; justify-content: center; }
 
@@ -499,23 +544,31 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="logo-mark">
-    <svg width="36" height="36" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="38" height="38" rx="7" fill="#1B2D45"/>
-      <rect x="7" y="8" width="11" height="2.8" rx="1" fill="#E8A020"/>
-      <rect x="11.2" y="8" width="2.8" height="14" rx="1" fill="#E8A020"/>
-      <rect x="21" y="8" width="10" height="2.8" rx="1" fill="white"/>
-      <rect x="21" y="8" width="2.8" height="14" rx="1" fill="white"/>
-      <rect x="21" y="14.6" width="8" height="2.6" rx="1" fill="white"/>
-      <rect x="21" y="19.2" width="10" height="2.8" rx="1" fill="white"/>
+    <svg width="40" height="36" viewBox="0 0 48 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="48" height="38" rx="7" fill="#1B2D45"/>
+      <!-- T (blue) -->
+      <rect x="4" y="8" width="9" height="2.5" rx="1" fill="white"/>
+      <rect x="7.5" y="8" width="2.5" height="13" rx="1" fill="white"/>
+      <!-- S (amber) -->
+      <rect x="16" y="8" width="8" height="2.5" rx="1" fill="#E8A020"/>
+      <rect x="16" y="8" width="2.5" height="6.5" rx="1" fill="#E8A020"/>
+      <rect x="16" y="13.5" width="8" height="2.5" rx="1" fill="#E8A020"/>
+      <rect x="21.5" y="13.5" width="2.5" height="6.5" rx="1" fill="#E8A020"/>
+      <rect x="16" y="18.5" width="8" height="2.5" rx="1" fill="#E8A020"/>
+      <!-- E (white) -->
+      <rect x="28" y="8" width="9" height="2.5" rx="1" fill="white"/>
+      <rect x="28" y="8" width="2.5" height="13" rx="1" fill="white"/>
+      <rect x="28" y="13.5" width="7" height="2.5" rx="1" fill="white"/>
+      <rect x="28" y="18.5" width="9" height="2.5" rx="1" fill="white"/>
     </svg>
-    <span class="logo-wordmark">Tym <span>Electrical</span></span>
+    <span class="logo-wordmark"><span class="wm-tym">Tym</span> Solar &amp; Electrical</span>
   </a>
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#why-us">Why Us</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
-    <a href="https://wa.me/27724501066?text=Hi%2C%20I%E2%80%99d%20like%20a%20quote%20from%20Tym%20Electrical." class="nav-wa" target="_blank" rel="noopener">
+    <a href="https://wa.me/27724501066?text=Hi%2C%20I%E2%80%99d%20like%20a%20quote%20from%20TSE%20Tym%20Solar%20and%20Electrical." class="nav-wa" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.524 5.842L.057 23.885l6.202-1.626A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.895 9.895 0 01-5.047-1.376l-.362-.215-3.68.965.981-3.589-.235-.369A9.86 9.86 0 012.106 12C2.106 6.58 6.58 2.106 12 2.106 17.42 2.106 21.894 6.58 21.894 12c0 5.42-4.474 9.894-9.894 9.894z"/></svg>
       WhatsApp
     </a>
@@ -529,7 +582,7 @@
     <h1>Electrical work done right,<br><span>every time.</span></h1>
     <p class="hero-sub">Installations, repairs, and emergency callouts across Cape Town. We show up on time, do the job properly, and leave your home safe.</p>
     <div class="hero-actions">
-      <a href="https://wa.me/27724501066?text=Hi%2C%20I%E2%80%99d%20like%20a%20quote%20from%20Tym%20Electrical." class="btn-wa" target="_blank" rel="noopener">
+      <a href="https://wa.me/27724501066?text=Hi%2C%20I%E2%80%99d%20like%20a%20quote%20from%20TSE%20Tym%20Solar%20and%20Electrical." class="btn-wa" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.524 5.842L.057 23.885l6.202-1.626A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.895 9.895 0 01-5.047-1.376l-.362-.215-3.68.965.981-3.589-.235-.369A9.86 9.86 0 012.106 12C2.106 6.58 6.58 2.106 12 2.106 17.42 2.106 21.894 6.58 21.894 12c0 5.42-4.474 9.894-9.894 9.894z"/></svg>
         Chat on WhatsApp
       </a>
@@ -543,14 +596,8 @@
   </div>
   <div class="hero-img-wrap">
     <div class="hero-img-card">
-      <img src="heromobile.jpg" alt="Tym Electrical at work">
-      <div class="hero-callout">
-        <div class="callout-icon">🚨</div>
-        <div class="callout-text">
-          <strong>24/7 Emergency</strong>
-          <span>We respond fast</span>
-        </div>
-      </div>
+      <img src="heromobile.jpg" alt="TSE Tym Solar and Electrical at work">
+
     </div>
   </div>
 </section>
@@ -570,31 +617,64 @@
       <h2 class="sec-h">Our services</h2>
       <p class="sec-sub">From a single plug point to a full rewire, we handle it properly.</p>
     </div>
+    <!-- Featured: Solar Installation -->
+    <div class="svc-featured">
+      <div class="svc-featured-img">
+        <img src="solar-installation.jpg" alt="Solar panel installation by TSE Tym Solar and Electrical">
+      </div>
+      <div class="svc-featured-body">
+        <span class="svc-num">01</span>
+        <h3>Solar Installation</h3>
+        <p>Grid-tied and off-grid solar systems for homes and businesses. We handle the full installation — panels, inverters, batteries, and grid connection — done safely and to spec.</p>
+      </div>
+    </div>
+
+    <!-- 4-column grid for remaining services -->
     <div class="services-grid">
       <div class="svc-card">
-        <span class="svc-num">01</span>
-        <h3>Installations</h3>
-        <p>New wiring, DB boards, lighting, and plug points for homes and businesses. Done to spec, first time.</p>
+        <div class="svc-card-img">
+          <img src="geyser-maintenance.jpg" alt="Geyser maintenance">
+        </div>
+        <div class="svc-card-body">
+          <span class="svc-num">02</span>
+          <h3>Geyser Maintenance</h3>
+          <p>Element replacements, thermostats, pressure valves, and full geyser installations. Done right, no shortcuts.</p>
+        </div>
       </div>
       <div class="svc-card">
-        <span class="svc-num">02</span>
-        <h3>Maintenance and Repairs</h3>
-        <p>Tripping breakers, dead plugs, flickering lights. We find the fault and fix it properly.</p>
+        <div class="svc-card-img">
+          <img src="appliance-installation.jpg" alt="Appliance installation">
+        </div>
+        <div class="svc-card-body">
+          <span class="svc-num">03</span>
+          <h3>Appliance Installation</h3>
+          <p>Stoves, ovens, extractor fans, and built-in appliances wired and installed safely for homes and businesses.</p>
+        </div>
       </div>
       <div class="svc-card">
-        <span class="svc-num">03</span>
-        <h3>Residential and Commercial</h3>
-        <p>Houses, flats, offices, small businesses. We work across Cape Town and surrounding areas.</p>
+        <div class="svc-card-img">
+          <img src="electrical-maintenance.jpg" alt="Electrical maintenance and repairs">
+        </div>
+        <div class="svc-card-body">
+          <span class="svc-num">04</span>
+          <h3>Maintenance &amp; Repairs</h3>
+          <p>Tripping breakers, dead plugs, flickering lights. We find the fault and fix it properly, first time.</p>
+        </div>
       </div>
       <div class="svc-card">
-        <span class="svc-num">04</span>
-        <h3>Emergency Callouts</h3>
-        <p>Power out? Sparks? Don't wait. WhatsApp us any time and we will get to you fast.</p>
+        <div class="svc-card-img">
+          <img src="house-wiring-rewiring.jpg" alt="House wiring and rewiring">
+        </div>
+        <div class="svc-card-body">
+          <span class="svc-num">05</span>
+          <h3>Wiring &amp; Rewiring</h3>
+          <p>New wiring, DB boards, lighting, and plug points for homes and businesses. Done to spec and code.</p>
+        </div>
       </div>
     </div>
     <div class="svc-cta">
       <p>Not sure if we cover your job? Send us a message and we will let you know.</p>
-      <a href="https://wa.me/27724501066?text=Hi%2C%20I%E2%80%99d%20like%20a%20quick%20quote%20from%20Tym%20Electrical." class="btn-wa" target="_blank" rel="noopener">
+      <a href="https://wa.me/27724501066?text=Hi%2C%20I%E2%80%99d%20like%20a%20quick%20quote%20from%20TSE%20Tym%20Solar%20and%20Electrical." class="btn-wa" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.524 5.842L.057 23.885l6.202-1.626A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.895 9.895 0 01-5.047-1.376l-.362-.215-3.68.965.981-3.589-.235-.369A9.86 9.86 0 012.106 12C2.106 6.58 6.58 2.106 12 2.106 17.42 2.106 21.894 6.58 21.894 12c0 5.42-4.474 9.894-9.894 9.894z"/></svg>
         Get a quick quote
       </a>
@@ -637,7 +717,7 @@
         </div>
         <div class="review-card">
           <div class="stars">★★★★★</div>
-          <blockquote>Called Tym Electrical when we had a fault the night before a property inspection. They were there within two hours and sorted everything out. Could not have been more relieved.</blockquote>
+          <blockquote>Called TSE Tym Solar and Electrical when we had a fault the night before a property inspection. They were there within two hours and sorted everything out. Could not have been more relieved.</blockquote>
           <div class="reviewer">
             <div class="reviewer-av">NV</div>
             <div>
@@ -646,7 +726,7 @@
             </div>
           </div>
         </div>
-        <a href="https://wa.me/27724501066?text=Hi%2C%20I%E2%80%99d%20like%20to%20get%20in%20touch%20with%20Tym%20Electrical." class="btn-wa" style="width:100%;justify-content:center" target="_blank" rel="noopener">
+        <a href="https://wa.me/27724501066?text=Hi%2C%20I%E2%80%99d%20like%20to%20get%20in%20touch%20with%20TSE%20Tym%20Solar%20and%20Electrical." class="btn-wa" style="width:100%;justify-content:center" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.524 5.842L.057 23.885l6.202-1.626A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.895 9.895 0 01-5.047-1.376l-.362-.215-3.68.965.981-3.589-.235-.369A9.86 9.86 0 012.106 12C2.106 6.58 6.58 2.106 12 2.106 17.42 2.106 21.894 6.58 21.894 12c0 5.42-4.474 9.894-9.894 9.894z"/></svg>
           Get in touch
         </a>
@@ -662,7 +742,7 @@
     <h2>Ready to get the job done?</h2>
     <p>Send us a WhatsApp, describe your job, and we will get back to you with a quote. No forms, no waiting.</p>
     <div class="quote-card">
-      <a href="https://wa.me/27724501066?text=Hi%2C%20I%E2%80%99d%20like%20a%20quote%20from%20Tym%20Electrical." class="btn-wa-lg" target="_blank" rel="noopener">
+      <a href="https://wa.me/27724501066?text=Hi%2C%20I%E2%80%99d%20like%20a%20quote%20from%20TSE%20Tym%20Solar%20and%20Electrical." class="btn-wa-lg" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.524 5.842L.057 23.885l6.202-1.626A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.895 9.895 0 01-5.047-1.376l-.362-.215-3.68.965.981-3.589-.235-.369A9.86 9.86 0 012.106 12C2.106 6.58 6.58 2.106 12 2.106 17.42 2.106 21.894 6.58 21.894 12c0 5.42-4.474 9.894-9.894 9.894z"/></svg>
         Message us on WhatsApp
       </a>
@@ -678,19 +758,38 @@
   <div class="section-inner">
     <div class="about-grid">
       <div class="about-img">
-        <div class="about-img-placeholder">Add a team photo here</div>
+        <img src="aboutus.jpg" alt="The TSE Tym Solar and Electrical team">
       </div>
       <div class="about-text">
         <span class="eyebrow">About us</span>
         <h2 class="sec-h">Based in Woodstock. Built on good work.</h2>
-        <p>Tym Electrical started with one straightforward goal: do the job properly and treat people fairly. We work across Cape Town and have built our reputation one job at a time.</p>
+        <p>TSE Tym Solar and Electrical started with one straightforward goal: do the job properly and treat people fairly. We work across Cape Town and have built our reputation one job at a time.</p>
         <p>Whether it is a quick repair or a full installation, we bring the same care to every job. We show up prepared, work safely, and make sure everything is right before we leave.</p>
-        <p>When you call Tym Electrical, you are getting a team that takes the work seriously.</p>
-        <a href="https://wa.me/27724501066?text=Hi%2C%20I%E2%80%99d%20like%20to%20find%20out%20more%20about%20Tym%20Electrical." class="btn-wa" target="_blank" rel="noopener">
+        <p>When you call TSE Tym Solar and Electrical, you are getting a team that takes the work seriously.</p>
+        <a href="https://wa.me/27724501066?text=Hi%2C%20I%E2%80%99d%20like%20to%20find%20out%20more%20about%20TSE%20Tym%20Solar%20and%20Electrical." class="btn-wa" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.524 5.842L.057 23.885l6.202-1.626A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.895 9.895 0 01-5.047-1.376l-.362-.215-3.68.965.981-3.589-.235-.369A9.86 9.86 0 012.106 12C2.106 6.58 6.58 2.106 12 2.106 17.42 2.106 21.894 6.58 21.894 12c0 5.42-4.474 9.894-9.894 9.894z"/></svg>
           Say hello
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION MAP -->
+<section class="section map-section" id="location">
+  <div class="section-inner">
+    <div class="map-header">
+      <span class="eyebrow">Find us</span>
+      <h2 class="sec-h">Based in Woodstock, Cape Town</h2>
+      <p class="sec-sub">307 Albert Rd, Woodstock, Cape Town — serving the whole metro area.</p>
+    </div>
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.358!2d18.4588!3d-33.9275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5d6a4d1cd7a9%3A0xf4b6a6b7e5e5e5e5!2s307%20Albert%20Rd%2C%20Woodstock%2C%20Cape%20Town%2C%207925!5e0!3m2!1sen!2sza!4v1710000000000!5m2!1sen!2sza"
+        width="100%" height="420" style="border:0; border-radius:14px; display:block;"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="TSE Tym Solar and Electrical – 307 Albert Rd, Woodstock, Cape Town">
+      </iframe>
     </div>
   </div>
 </section>
@@ -701,19 +800,27 @@
     <div>
       <div class="footer-logo-wrap">
         <a href="#" class="logo-mark" style="text-decoration:none">
-          <svg width="36" height="36" viewBox="0 0 38 38" fill="none">
-            <rect width="38" height="38" rx="7" fill="#243A57"/>
-            <rect x="7" y="8" width="11" height="2.8" rx="1" fill="#E8A020"/>
-            <rect x="11.2" y="8" width="2.8" height="14" rx="1" fill="#E8A020"/>
-            <rect x="21" y="8" width="10" height="2.8" rx="1" fill="white"/>
-            <rect x="21" y="8" width="2.8" height="14" rx="1" fill="white"/>
-            <rect x="21" y="14.6" width="8" height="2.6" rx="1" fill="white"/>
-            <rect x="21" y="19.2" width="10" height="2.8" rx="1" fill="white"/>
+          <svg width="40" height="36" viewBox="0 0 48 38" fill="none">
+            <rect width="48" height="38" rx="7" fill="#243A57"/>
+            <!-- T (blue) -->
+            <rect x="4" y="8" width="9" height="2.5" rx="1" fill="white"/>
+            <rect x="7.5" y="8" width="2.5" height="13" rx="1" fill="white"/>
+            <!-- S (amber) -->
+            <rect x="16" y="8" width="8" height="2.5" rx="1" fill="#E8A020"/>
+            <rect x="16" y="8" width="2.5" height="6.5" rx="1" fill="#E8A020"/>
+            <rect x="16" y="13.5" width="8" height="2.5" rx="1" fill="#E8A020"/>
+            <rect x="21.5" y="13.5" width="2.5" height="6.5" rx="1" fill="#E8A020"/>
+            <rect x="16" y="18.5" width="8" height="2.5" rx="1" fill="#E8A020"/>
+            <!-- E (white) -->
+            <rect x="28" y="8" width="9" height="2.5" rx="1" fill="white"/>
+            <rect x="28" y="8" width="2.5" height="13" rx="1" fill="white"/>
+            <rect x="28" y="13.5" width="7" height="2.5" rx="1" fill="white"/>
+            <rect x="28" y="18.5" width="9" height="2.5" rx="1" fill="white"/>
           </svg>
-          <span class="logo-wordmark" style="color:white">Tym <span style="color:#E8A020">Electrical</span></span>
+          <span class="logo-wordmark"><span class="wm-tym">Tym</span> Solar &amp; Electrical</span>
         </a>
       </div>
-      <p class="desc">Licensed electricians serving Cape Town and surrounding areas. Installations, maintenance, and emergency callouts.</p>
+      <p class="desc">Licensed electricians and solar installers serving Cape Town and surrounding areas. Solar, installations, maintenance, and emergency callouts.</p>
       <div class="footer-contact">
         <a href="https://wa.me/27724501066" target="_blank" rel="noopener">WhatsApp: 072 450 1066</a>
         <a href="tel:0724501066">072 450 1066</a>
@@ -737,13 +844,13 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>2025 Tym Electrical. Woodstock, Cape Town.</p>
+    <p>2025 TSE Tym Solar and Electrical. Woodstock, Cape Town.</p>
     <p>Built to get you more work.</p>
   </div>
 </footer>
 
 <!-- FLOATING WA -->
-<a href="https://wa.me/27724501066?text=Hi%2C%20I%E2%80%99d%20like%20a%20quote%20from%20Tym%20Electrical." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp Tym Electrical">
+<a href="https://wa.me/27724501066?text=Hi%2C%20I%E2%80%99d%20like%20a%20quote%20from%20TSE%20Tym%20Solar%20and%20Electrical." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp TSE Tym Solar and Electrical">
   <div class="wa-ring"></div>
   <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.524 5.842L.057 23.885l6.202-1.626A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.895 9.895 0 01-5.047-1.376l-.362-.215-3.68.965.981-3.589-.235-.369A9.86 9.86 0 012.106 12C2.106 6.58 6.58 2.106 12 2.106 17.42 2.106 21.894 6.58 21.894 12c0 5.42-4.474 9.894-9.894 9.894z"/></svg>
 </a>
